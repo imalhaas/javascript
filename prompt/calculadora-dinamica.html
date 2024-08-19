@@ -1,0 +1,33 @@
+<html>
+    <body>
+        <script>
+           var numero1 = prompt('Digite o numero 1...');
+           
+        var sinal = prompt('Digite o sinal da sua operação...');
+        while(sinal != '-' && sinal != '+' && sinal != '/' && sinal != '*'){
+            alert('Por favor, digite um sinal valido.');
+            sinal = prompt('Informe o sinal correto (+  -  /  * )');
+        }
+
+        var numero2 = prompt('Informe o numero2');
+
+        numero1 = parseInt(numero1);
+        numero2 = parseInt(numero2);
+
+        var resultado = 0;
+        if(sinal == '+'){
+             resultado = numero1 + numero2;
+        }else if(sinal == "-"){
+           resultado = numero1 - numero2;
+        }else if(sinal =="/"){
+            resultado = numero1 / numero2;
+        }else if(sinal =="*"){
+            resultado = numero1 * numero2;
+        }
+
+
+
+        alert('O resultado final é: ' + resultado);
+        </script>
+    </body>
+</html>
