@@ -1,15 +1,109 @@
 <html>
     <body>
         <style>
+            /*
             .box{
                 width: 500px;
                 height: 500px;
                 background-color: red;
+                margin-left: 0;
+            }
+            .animEsquerda{
+                transition: 1s;
+                margin-left: 90px;
+                margin: 100px;
+               
+            }*/
+            .conteudo h2 span{
+                font-size: 13px;
+                cursor: pointer;
+            }
+            .conteudo p{
+                overflow: hidden;
+                height: 8px;
+                transition: 1s;
+            }
+            .mostrar{
+                height: 200px !important;
+
+            }
+
+            .sobre h2 span{
+                font-size: 13px;
+                cursor: pointer;
+            }
+
+            .sobre p{
+                overflow: hidden;
+                height: 8px;
+                transition: 1s;
+            }
+
+            .ver{
+                height: 200px ;
             }
         </style>
-        <div class="box"></div>
+       <!-- <div class="box"></div>-->
+        <div class="conteudo">
+            <h2>Lucas Magalhães <span>Ver Mais!</span></h2>
+            <p>Lucas Magalhães é um desenvolvedor Frontend especializado em criar interfaces intuitivas e responsivas. 
+                Com vasta experiência em tecnologias como React, Svelte, JavaScript, HTML, CSS e Tailwind CSS, 
+                ele se dedica a entregar soluções que proporcionam a melhor experiência do usuário. 
+                Apaixonado por inovação, Lucas está sempre explorando novas ferramentas e técnicas para garantir 
+                que suas aplicações sejam não apenas funcionais, mas também visualmente atraentes e eficientes.</p>
+        </div>
+        <div class="sobre">
+            <h2>Sobre <span>Ver mais!</span></h2>
+            <p>A loja virtual de Lucas Magalhães é especializada na criação e venda de páginas para perfis, 
+                utilizando as mais modernas tecnologias frontend como JavaScript, TypeScript, Svelte, HTML, CSS e React. 
+                Focada em oferecer a melhor experiência do usuário, a loja desenvolve páginas personalizadas que 
+                combinam design inovador com funcionalidade. Além disso, cada projeto é cuidadosamente elaborado p
+                ara atender às necessidades específicas dos clientes, garantindo soluções que se destacam tanto pela estética 
+                quanto pela performance.</p>
+        </div>
         <script>
+            
+            /*
+            var box = document.querySelectorAll('.box')[0];
+            
+            setTimeout(()=>{
+                box.classList.add('animEsquerda');
+            },1000);
+            
+           box.addEventListener('click',()=>{
+            box.classList.add('animEsquerda');
+           })
+            */
+           
+            var spanConteudo = document.querySelector('.conteudo span');
 
+            spanConteudo.addEventListener('click', ()=>{
+                var conteudo = document.querySelector('.conteudo p');
+                
+                if(conteudo.classList.contains('mostrar')){
+                    spanConteudo.innerHTML = 'ver mais!';
+                    conteudo.classList.remove('mostrar');
+
+                }else{
+                    spanConteudo.innerHTML = 'Ocultar';
+                    conteudo.classList.add('mostrar');
+                }
+            })
+
+            var spanSobre = document.querySelector('.sobre span');
+
+                spanSobre.addEventListener('click', ()=>{
+                    var conteudoSobre = document.querySelector('.sobre p');
+                    
+                    if(conteudoSobre.classList.contains('mostrar')){
+                        spanSobre.innerHTML = 'ver mais!';
+                        conteudoSobre.classList.remove('mostrar');
+
+                    }else{
+                        spanSobre.innerHTML = 'Ocultar';
+                        conteudoSobre.classList.add('mostrar');
+                    }
+                })
         </script>
     </body>
 </html>
